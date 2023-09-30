@@ -1,5 +1,5 @@
 
-namespace Breackfast
+namespace BreackfastDtos
 {
     public record CreateBreackfastRequest(
         string Name,
