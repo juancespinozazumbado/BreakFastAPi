@@ -1,0 +1,35 @@
+@using Models.Breakfast
+@model List<Breakfast>
+
+
+@{
+    ViewData["Title"] = "Breackfast";
+}
+
+
+<h1>Breakfast for today!</h1>
+
+
+<link href="@Url.Content("~/CSS/Breakfast/Breakfast.css")" rel="stylesheet" type="text/css" />
+
+<div class="container-fluid">
+
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+
+        @foreach (var breakfast in Model)
+        {
+            <div class="col mb-4">
+                <div class="card ">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <img src="@Url.Content(breakfast.ImageUrl)" alt="Cardimage" class="card-img-top img-fluid">
+                        <div class="card-body">
+                            <h3 class="card-title">@breakfast.Name</h3>
+                            <p class="card-text">@breakfast.CreateDatetime</p>
+                            <p class="card-text">@breakfast.Description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
